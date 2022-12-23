@@ -14,6 +14,15 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: large;
     }
+    /*logo*/
+    .logo{
+      width: 10%;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0.5rem;
+   }
+      
+   
  /*Navegador*/
  .btn btn-outline-success{
    color: black;
@@ -37,6 +46,26 @@
     height: 100%;
     width: 10%;
    
+}
+.carousel-inner img{
+   width: 100%;
+   min-width: 460px;
+ }
+.carousel-inner{
+   width: 100%;
+}
+.carousel{
+   width: 80%;
+   margin:auto;
+   padding-top: 2rem;
+}
+.carousel-indicators{
+   width: 50%;
+   margin: auto;
+}
+.carousel-control-prev{
+   width:10%;
+   margin: auto;
 }
 
  body{
@@ -73,23 +102,4 @@ box-shadow: 4px 5px 37px 15px rgba(0,0,0,0.67);
   
  }
  
- .carousel-inner img{
-   width: 100%;
-   min-width: 460px;
- }
-.carousel-inner{
-   width: 100%;
-}
-.carousel{
-   width: 50%;
-   margin:auto;
-   padding-top: 2rem;
-}
-.carousel-indicators{
-   width: 50%;
-   margin: auto;
-}
-.carousel-control-prev{
-   width:10%;
-   margin: auto;
-}
+ 
