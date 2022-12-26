@@ -28,13 +28,13 @@
       <div class="container collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="regala.html">Regala</a>
+            <a class="nav-link active" aria-current="page" href="#">Regala</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Busca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">contactanos</a>
+            <a class="nav-link" href="contacto.html">contactanos</a>
           </li>
         </ul>
         <form class="d-flex ms-auto" role="search">
@@ -49,12 +49,12 @@
 
 <body>
   <section>
-   
+    
 
     <form class="formulario sombra">
 
       <fieldset>
-        <legend class="tilte-form"> Contactanos llenando todos los campos </legend>
+        <legend class="tilte-form"> Regala </legend>
         <div class="contenedor-campos">
           <div class="campos">
             <label >Nombre</label>
@@ -62,19 +62,28 @@
             <div id="mensaje1" class="errores"></div>
           </div>
           <div class="campos">
-            <label >Télefono</label>
-            <input id="itNum" class="input-text" type="number" placeholder="Tu Telefono">
+            <label >Apellido</label>
+            <input id="itNum" class="input-text" type="text" placeholder="Tu Telefono">
             <div id="mensaje2" class="errores"></div>
           </div>
           <div class="campos">
-            <label >Correo</label>
-            <input id="itMail" class="input-text" type="email" placeholder="Tu Email">
+            <label >Nombre del producto</label>
+            <input id="itMail" class="input-text" type="text" placeholder="Tu Email">
             <div id="mensaje3" class="errores"></div>
           </div>
+          
           <div class="campos">
-            <label >Mensaje</label>
+            <label >Descripcion</label>
             <textarea class="input-text"></textarea>
           </div>
+          <div>
+            <label>Imagen Producto</label>
+            <input type="file">
+          </div>
+          
+
+            
+          
         </div>
         <!--.contenedor-campos-->
         <div class="alinear-derecha flex">
@@ -86,32 +95,7 @@
     </form>
 
   </section>
-  <script>  
-
-    $(document).ready(function(){
-      $("#bEnviar").click(function(){
-        var nombre = $("#itNombre").val();
-        var numero = $("#itNum").val();
-        var correo = $("#itMail").val();
-        console.log(numero,correo,nombre)
-        
-        
-        if(nombre == ""){
-          $("#mensaje1").text("Nombre requerido");
-          
-        }
-        if(numero == ""){
-          $("#mensaje2").text("Numero requerido");
-          
-        }
-        if(correo == ""){
-          $("#mensaje3").text("Email requerido");
-          
-        }
-     
-      });
-    });
-  </script>
+  
 </body>
 
 </html>

@@ -38,36 +38,6 @@
    padding: 0 1rem;
  }
  
- /*carrusel*/
- /*.carousel-item{
-    width: 100%;
-    height: 590px;
-}
-.carousel-item img {
-    height: 100%;
-    width: 10%;
-   
-}
-.carousel-inner img{
-   width: 100%;
-   
- }
-.carousel-inner{
-   width: 100%;
-}
-.carousel{
-   width: 84%;
-   margin:auto;
-   padding-top: 1.5rem;
-}
-.carousel-indicators{
-   width: 50%;
-   margin: auto;
-}
-.carousel-control-prev{
-   width:10%;
-   margin: auto;
-}*/
 
  body{
   background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 20% );
@@ -101,13 +71,14 @@ border-radius: 1rem;
   padding: 2rem;
   
  }
- /*Contacto*/
- .formulario {
-   background-color: var(--gris);
+/*contactos*/
+
+.formulario {
+   background-color: rgb(255, 230, 0);
    width: min( 60rem, 100%);
    margin: 0 auto;
    padding: 2rem;
-   border-radius: 2rem;
+   border-radius: 1rem;
 }
 
 .formulario fieldset{
@@ -119,8 +90,8 @@ border-radius: 1rem;
    font-size: 1.8rem;
    text-transform: uppercase;
    font-weight: 700;
-   margin-bottom: 2rem;
-   color: var(--blanco);
+   margin-bottom: 1rem;
+   color: black;
 }
 @media (min-width: 768px) {
    .contenedor-campos {
@@ -139,7 +110,7 @@ border-radius: 1rem;
 
 }
 .campos label {
-   color: var(--blanco);
+   color: rgb(0, 0, 0);
    font-weight: bold;
    margin-bottom: .5rem;
    display: block;
@@ -152,9 +123,16 @@ border-radius: 1rem;
    width: 100%;
    border: none;
    padding: 1.5rem;
-   border-radius: 0.5rem;
+   border-radius: 1rem;
    resize: none;
 }
+.errores{
+   color: red;
+}
+.boton{
+   margin: 1rem;
+}
+
 
 /**.footer**/
 .footer {
