@@ -18,11 +18,16 @@
       margin-bottom: 0.5rem;
       margin-left: 0.5rem;
    }
-       .boton-user{
-         border-radius: 100%;
-         
+   /*botones*/
+ .boton-user-name{     
+   border-radius: 100%;
+   margin-top: 2rem;  
+   margin-left: 2rem;
       }
-   
+      .boton-user{
+         height: 2rem;
+         width: 2rem;         
+      }  
  /*Navegador*/
  .btn btn-outline-success{
    color: black;
