@@ -6,27 +6,32 @@
       --secundario: #0097a7;
       --gris: #757575;
       --grisclaro: #dfe9f3
-      
-      
-      }
-    
+      }    
     *{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: large;
     }
     /*logo*/
     .logo{
-      width: 10%;
+      width: 30%;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       margin-left: 0.5rem;
    }
+       .boton-user{
+         border-radius: 100%;
+         
+      }
+   
  /*Navegador*/
  .btn btn-outline-success{
    color: black;
  }
+ .navbar{
+   margin-bottom: 2rem;
+ }
  .nav-link{
-    color: black;
+    color: rgb(255, 255, 255);
  }
    .bg-light{
       --bs-bg-opacity: 0.2;
@@ -35,9 +40,8 @@
     color: black;
  }
  .nav-item{
-   padding: 0 1rem;
+   padding: 0 0.5rem;
  }
- 
 
  body{
   background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 20% );
@@ -47,40 +51,25 @@
   position: relative;
   margin-bottom: 2rem;
   }
-    /*texto*/
- .letra{
-   color: rgb(255, 255, 255);
- }
-
- 
  /*Descripccion*/
  .container-1{
 background-color: var(--gris);
 margin: 0 auto;
 padding: 2rem;
 border-radius: 1rem;
-
  } 
  .parrafo{
    color: rgb(255, 255, 255);
  }
-
-/*footer*/
- .footer{
-  text-align: center;
-  padding: 2rem;
-  
- }
 /*contactos*/
-
 .formulario {
-   background-color: rgb(255, 230, 0);
+   background-color:#409dc4;
    width: min( 60rem, 100%);
    margin: 0 auto;
    padding: 2rem;
    border-radius: 1rem;
+   
 }
-
 .formulario fieldset{
    border: none;
 
@@ -92,6 +81,9 @@ border-radius: 1rem;
    font-weight: 700;
    margin-bottom: 1rem;
    color: black;
+}
+.formulario label{
+   text-align: center;
 }
 @media (min-width: 768px) {
    .contenedor-campos {
@@ -106,7 +98,7 @@ border-radius: 1rem;
 }
 }
 .campos {
-   margin-bottom: 1rem;
+   margin-bottom: 3rem;
 
 }
 .campos label {
@@ -129,13 +121,14 @@ border-radius: 1rem;
 .errores{
    color: red;
 }
-.boton{
+.btn-1{
    margin: 1rem;
+   border-radius: 2rem;
+  border-top: 2rem;
 }
-
-
 /**.footer**/
 .footer {
    text-align: center;
+   padding-top: 4rem;
+   padding-bottom: 2rem;
 }
- 
