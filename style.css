@@ -137,3 +137,23 @@ border-radius: 1rem;
    padding-top: 4rem;
    padding-bottom: 2rem;
 }
+
+.titulo{
+   text-align: center;
+   margin-left: 10%;
+   margin-bottom: 3rem;
+}
+.Contenedor{
+   margin-bottom: 1rem;
+   padding-bottom: 2rem;
+   border: 2px ridge #1C6EA4;
+   border-radius: 1rem;
+   -webkit-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58); 
+box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
+}
+.btn{
+   
+   margin-top: 2rem;
+   
+}
+
