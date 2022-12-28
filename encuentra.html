@@ -63,66 +63,10 @@
 </header>
 
 <body>
-  <section>
-    <form class="formulario">
-
-      <fieldset>
-        <legend class="tilte-form"> Contactanos  </legend>
-          <div class="contenedor-campos">
-            <div class="campos">
-              <label >Nombre</label>
-              <input id="itNombre" class="input-text" type="text" placeholder=" Tu Nombre">
-              <div id="mensaje1" class="errores"></div>
-            </div>
-            <div class="campos">
-              <label >Télefono</label>
-              <input id="itNum" class="input-text" type="number" placeholder="Tu Telefono">
-              <div id="mensaje2" class="errores"></div>
-            </div>
-            <div class="campos">
-              <label >Correo</label>
-              <input id="itMail" class="input-text" type="email" placeholder="Tu Email">
-              <div id="mensaje3" class="errores"></div>
-            </div>
-            <div class="campos">
-              <label >Mensaje</label>
-              <textarea class="input-text"></textarea>
-            </div>
-          </div>
-          <!--.contenedor-campos-->
-          <div class="alinear-derecha flex">
-            <button id="bEnviar" class="btn-1 btn-outline-dark" type="submit">Enviar</button>
-          </div>
-      </fieldset>
-
-    </form>
+ 
 
   </section>
-  <script>  
-
-    $(function(){
-      $("#bEnviar").click(function(){
-        var nombre = $("#itNombre").val();
-        var numero = $("#itNum").val();
-        var correo = $("#itMail").val();
-        // console.log(numero,correo,nombre)
-        
-        
-        if(nombre == ""){
-          $("#mensaje1").text("Nombre requerido");
-          
-        }
-        if(numero == ""){
-          $("#mensaje2").text("Numero requerido");
-          
-        }
-        if(correo == ""){
-          $("#mensaje3").text("Email requerido");
-          
-        }
-      });
-    });
-  </script>
+  
   <footer class="footer">
   Derechos reservados
 </footer>
