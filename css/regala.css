@@ -1,0 +1,138 @@
+:root {
+   --blanco: #ffffff;
+   --black: #212121;
+   --primario: #ffc107;
+   --secundario: #0097a7;
+   --gris: #757575;
+   --grisclaro: #dfe9f3
+   }    
+ *{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-size: large;
+ }
+ /*logo*/
+ .logo{
+   width: 30%;
+   margin-top: 0.5rem;
+   margin-bottom: 0.5rem;
+   margin-left: 0.5rem;
+}
+/*botones*/
+.boton-user-name{     
+border-radius: 100%;
+margin-top: 2rem;  
+margin-left: 2rem;
+   }
+   .boton-user{
+      height: 2rem;
+      width: 2rem;         
+   }  
+/*Navegador*/
+
+.navbar{
+margin-bottom: 2rem;
+}
+.nav-link{
+ color: rgb(255, 255, 255);
+}
+.nav-item{
+padding: 0 0.5rem;
+}
+body{
+background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 20% );
+background-repeat: no-repeat;
+background-size: cover;
+height: 1350px;
+position: relative;
+margin-bottom: 2rem;
+}
+/*Descripccion*/
+.container-1{
+background-color: var(--gris);
+margin: 0 auto;
+padding: 2rem;
+border-radius: 1rem;
+} 
+.parrafo{
+color: rgb(255, 255, 255);
+}
+/*formulario regala*/
+.error{
+    background-color: red;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+ }
+ 
+ .check{
+    background-color: green;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+ }
+ 
+ .contacto-bg{
+    background-image: url(../foto/chayanne-cantante-spot-navidad-falabella-2.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+ }
+ 
+ .formulario{
+    background-color: #409dc4;
+    margin: -5rem auto 0 auto;
+    width: min( 60rem, 100%);
+    padding: 2rem;
+    border-radius: 10px;
+ }
+ 
+ .campo{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+ }
+ .campo__label{
+    flex: 0 0 3rem;
+    text-align: right;   
+    border-radius: 5rem;
+ }
+ 
+ .campo__field{
+    flex: 1;
+    border: 1px solid var(--gris);
+    border-radius: 0.5rem;
+ }
+ 
+ .campo__field--textarea{
+    height: 10rem;  
+ }
+ .container{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+ } 
+ /**.footer**/
+.footer {
+   text-align: center;
+   padding-top: 4rem;
+   padding-bottom: 2rem;
+}
+
+.titulo{
+   text-align: center;
+   margin-left: 10%;
+   margin-bottom: 3rem;
+}
+.Contenedor{
+   margin-bottom: 1rem;
+   padding-bottom: 2rem;
+   border: 2px ridge #1C6EA4;
+   border-radius: 1rem;
+   -webkit-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58); 
+box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
+}
