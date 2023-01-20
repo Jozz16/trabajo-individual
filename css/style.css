@@ -142,4 +142,14 @@ border-radius: 1rem;
    -webkit-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58); 
 box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
 }
+.video-background{
+   border: 0;
+   position: fixed;
+   min-width: 100%;
+   min-height: 100%;
 
+   top: 50%;
+   left: 50%;
+   transform:  translateX(-50%) translateY(-50%);
+   z-index: -1;
+}

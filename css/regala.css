@@ -10,6 +10,7 @@
      font-family: Verdana, Geneva, Tahoma, sans-serif;
      font-size: large;
  }
+ 
  /*logo*/
  .logo{
    width: 30%;
@@ -38,14 +39,7 @@ margin-bottom: 2rem;
 .nav-item{
 padding: 0 0.5rem;
 }
-body{
-background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 20% );
-background-repeat: no-repeat;
-background-size: cover;
-height: 1350px;
-position: relative;
-margin-bottom: 2rem;
-}
+
 /*Descripccion*/
 .container-1{
 background-color: var(--gris);
@@ -100,13 +94,24 @@ color: rgb(255, 255, 255);
     flex: 0 0 3rem;
     text-align: right;   
     border-radius: 5rem;
+    padding-bottom: 1rem;
  }
  
  .campo__field{
     flex: 1;
     border: 1px solid var(--gris);
     border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
  }
+ .campo__field1{
+    flex: 1;
+    border: 1px solid var(--gris);
+    border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+ }
+
  
  .campo__field--textarea{
     height: 10rem;  
@@ -135,4 +140,15 @@ color: rgb(255, 255, 255);
    border-radius: 1rem;
    -webkit-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58); 
 box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
+}
+.video-background{
+   border: 0;
+   position: fixed;
+   min-width: 100%;
+   min-height: 100%;
+
+   top: 50%;
+   left: 50%;
+   transform:  translateX(-50%) translateY(-50%);
+   z-index: -1;
 }

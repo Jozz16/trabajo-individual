@@ -31,7 +31,7 @@ formulario.addEventListener('submit', function(e){
 function mostrarError(mensaje){
     let error = document.createElement('P')
     error.textContent = mensaje
-    console.log(error)
+   
     error.classList.add('error')
     formulario.appendChild(error)
     //ocultar alerta
