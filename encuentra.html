@@ -12,31 +12,12 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <header>
-    <div class="row no-gutters">
-        <div class="col-12 col-sm-10 col-md-8"><a href="index.html">
-                <img class="logo" src="/foto/logo.png" alt="logo"></a>
-        </div>
-        <div class="col-4 col-md-1">
-            <a href="contacto.html">
-                <button class="btn btn-outline-dark boton-user-name " type="button" data-toggle="tooltip"
-                    data-placement="bottom" title="Ingresa"><i
-                        class="fa-solid fa-person-walking-arrow-right"></i></button>
-            </a>
-        </div>
-
-        <div class="col-4 col-md-1">
-            <a href="registrate.html">
-                <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
-                    data-placement="bottom" title="Registrate"><i class="fa-solid fa-person-circle-plus"></i></button>
-            </a>
-        </div>
-    </div>
-
     <!-- Navegacion -->
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,72 +30,91 @@
                         <a class="nav-link" aria-current="page" href="regala.html">Regala</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="encuentra.html">encuentra</a>
+                        <a class="nav-link" href="encuentra.html">Encuentra</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">contactanos</a>
+                        <a class="nav-link" href="contacto.html">Contactanos</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
-                </form>
+
+
+                <div class="col-4 col-md-1">
+                    <a href="#">
+                        <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
+                            data-placement="bottom" title="Ingresa"><i
+                                class="fa-solid fa-person-walking-arrow-right text-white"></i></button>
+                    </a>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <a href="registrate.html">
+                        <button class="btn btn-outline-dark boton-user-name " type="button" data-toggle="tooltip"
+                            data-placement="bottom" title="Registrate"><i
+                                class="fa-solid fa-person-circle-plus text-white"></i></button>
+                    </a>
+                </div>
+
             </div>
         </div>
     </nav>
 
+
 </header>
 
 <body>
+
     <video class="video-background" src="foto/f4.mp4 " autoplay loop></video>
-    <div class=" titulo col-9">
+    <div class=" titulo col-9 text-white">
         <h1>Busca lo que necesitas</h1>
     </div>
     <div class="container">
-        <div class="Contenedor row">
+        <div class="Contenedor row p-5">
 
             <div class=" col-4">
-                <h4>Nombre del producto</h4>
-                <img src="/foto/download.jpg" alt="Prueba">
+                <h4 class="texto-titulo pb-4">Estanteria</h4>
+                <img class="img" src="/foto/download.jpg" alt="Prueba">
             </div>
             <div class="col-6">
-                <h4>Titulo de la publicacion</h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam elit
-                tincidunt elit, sed ultricies magna l
+                <h4 class=" texto-titulo pb-4">Titulo de la publicacion</h4>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam
+                    elit
+                    tincidunt elit, sed ultricies magna l
+                </div>
             </div>
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-info">Solicitar</button>
+                <button type="button" class="btn btn-outline-danger text-dark">Solicitar</button>
             </div>
         </div>
 
-        <div class="Contenedor row">
+        <div class="Contenedor row p-5">
             <div class=" col-4">
-                <h4>Nombre del producto</h4>
-                <img src="/foto/mesa.jpg" alt="Prueba">
+                <h4 class="pb-4">Nombre del producto</h4>
+                <img class="img" src="/foto/mesa.jpg" alt="Prueba">
             </div>
             <div class="col-6">
-                <h4>Titulo de la publicacion</h4>
+                <h4 class="texto-titulo pb-4">Titulo de la publicacion</h4>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam elit
                 tincidunt elit, sed ultricies magna l
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-info">Solicitar</button>
+                <button type="button" class="btn btn-outline-danger text-dark">Solicitar</button>
             </div>
         </div>
-        <div class="Contenedor row">
+        <div class="Contenedor row p-5">
             <div class=" col-4">
-                <h4>Nombre del producto</h4>
-                <img src="/foto/tele.jpg" alt="Prueba">
+                <h4 class="pb-4">Nombre del producto</h4>
+                <img class="img" src="/foto/tele.jpg" alt="Prueba">
             </div>
             <div class="col-6">
-                <h4>Titulo de la publicacion</h4>
+                <h4 class="texto-titulo pb-4">Titulo de la publicacion</h4>
                 Lorem ipsum dolor sit amet, consecit. Phasellus non lectus sagittis, convallis est vel, e
                 gestas felis. Suspendisse potenti. Quisque molestie eros nisl, vitae bibendum dolor blandit at. Mauris
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-info">Solicitar</button>
+                <button type="button" class="btn btn-outline-danger text-dark">Solicitar</button>
             </div>
         </div>
     </div>

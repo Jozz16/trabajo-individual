@@ -38,6 +38,7 @@ function mostrarError(mensaje){
     setTimeout(() => {
         error.remove()
     }, 4000);
+    
 }
 function mostrarAprobacion(mensaje){
     let check = document.createElement('P')
@@ -57,8 +58,7 @@ function limpiarFormulario(){
 }
 
 function leerTexto(e) {
-    // console.log('Escribiendo..')
-    // console.log(e.target.value)
+    
     datos[e.target.id] = e.target.value
     // console.log(datos)
 }

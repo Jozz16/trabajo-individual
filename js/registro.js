@@ -9,7 +9,7 @@ let divError = document.querySelector("#textError")
 boton.addEventListener("click", validacionNombre)
 function validacionNombre(e){
     e.preventDefault()
-    if(nombre.value === "" && correo.value===""&& contraseña.value === ""){
+    if(nombre.value === "" && correo.value === "" && contraseña.value === ""){
         alerta()        
     } else if (nombre.value === "") {
         alerta()

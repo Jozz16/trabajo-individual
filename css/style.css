@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
     :root {
       --blanco: #ffffff;
       --black: #212121;
@@ -135,9 +135,10 @@ border-radius: 1rem;
    margin-bottom: 3rem;
 }
 .Contenedor{
+   background-color: rgba(255, 255, 255, 0.521);
    margin-bottom: 1rem;
    padding-bottom: 2rem;
-   border: 2px ridge #1C6EA4;
+   /* border: 2px ridge #ff0000; */
    border-radius: 1rem;
    -webkit-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58); 
 box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
@@ -152,4 +153,10 @@ box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
    left: 50%;
    transform:  translateX(-50%) translateY(-50%);
    z-index: -1;
+}
+.img{
+   border-radius: 1rem;
+}
+.texto-titulo{
+   font-family: ;
 }

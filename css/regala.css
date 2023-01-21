@@ -73,8 +73,7 @@ color: rgb(255, 255, 255);
  }
  
  .formulario{
-    background-color: #ffffff;
-    Opacity : 0.5;
+   background-color: rgba(255, 255, 255, 0.521);
     margin: -5rem auto 0 auto;
     width: min( 60rem, 100%);
     padding: 2rem;
@@ -95,6 +94,7 @@ color: rgb(255, 255, 255);
  
  .campo__field{
     flex: 1;
+    color: #212121;
     border: 1px solid var(--gris);
     border-radius: 0.5rem;
     padding-top: 0.5rem;
