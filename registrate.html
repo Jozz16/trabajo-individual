@@ -17,27 +17,9 @@
 
 <header>
 
-    <div class="row no-gutters">
-        <div class="col-12 col-sm-10 col-md-8"><a href="index.html">
-                <img class="logo" src="/foto/logo.png" alt="logo"></a>
-        </div>
-        <div class="col-4 col-md-1">
-            <a href="#">
-                <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
-                    data-placement="bottom" title="Ingresa"><i
-                        class="fa-solid fa-person-walking-arrow-right"></i></button>
-            </a>
-        </div>
-
-        <div class="col-4 col-md-2">
-            <a href="registrate.html">
-                <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
-                    data-placement="bottom" title="Registrate"><i class="fa-solid fa-person-circle-plus"></i></button>
-            </a>
-        </div>
-    </div>
+    
     <!-- Navegacion -->
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,13 +35,26 @@
                         <a class="nav-link" href="encuentra.html">Encuentra</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">contactanos</a>
+                        <a class="nav-link" href="contacto.html">Contactanos</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Busca" aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
-                </form>
+                
+                    
+                    <div class="col-4 col-md-1">
+                        <a href="#">
+                            <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
+                                data-placement="bottom" title="Ingresa"><i
+                                    class="fa-solid fa-person-walking-arrow-right text-white"></i></button>
+                        </a>
+                    </div>
+            
+                    <div class="col-4 col-md-2">
+                        <a href="registrate.html">
+                            <button class="btn btn-outline-dark boton-user-name " type="button" data-toggle="tooltip"
+                                data-placement="bottom" title="Registrate"><i class="fa-solid fa-person-circle-plus text-white"></i></button>
+                        </a>
+                    </div>
+                
             </div>
         </div>
     </nav>
@@ -67,14 +62,15 @@
 </header>
 
 <body>
-    <video class="video-background" src="foto/f4.mp4 " autoplay loop></video>
+    
+    <video class="video-background" src="./foto/f4.mp4 " autoplay loop></video>
     <main class="container">
-        <h3 class="text-center">Contacto</h3>
+        <h3 class="text-center text-white">Registrate</h3>
         <div class="contacto-bg"></div>
 
-        <form class="formulario">
+        <form  class="formulario">
             <label class="campo__label" for="nombre">Nombre usuario</label>
-            <div class="campo">
+            <div  id="a" class="campo">
 
                 <input id="inputNombre" class="campo__field" id="nombre" type="text" placeholder="Tu nombre">
             </div>
@@ -84,12 +80,13 @@
                 <input id="inputEmail" class="campo__field" id="email" type="email" placeholder="Tu email">
             </div>
             <label class="campo__label">Contraseña</label>
-            <div class="campo">
+            <div id="divContra" class="campo">
 
                 <input id="inputContraseña" class="campo__field1" placeholder="Contraseña" type="password"> </input>
             </div>
+            <div id="textError"></div>
             <div class="campo">
-                <input type="submit" value="Enviar" class="boton boton--primario">
+                <button id="enviar">enviame</button>
             </div>
         </form>
 
@@ -97,8 +94,6 @@
     <footer class="footer">
         Derechos reservados
     </footer>
-    <!-- hoja js propia -->
-    <script src="/js/scripts.js"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>

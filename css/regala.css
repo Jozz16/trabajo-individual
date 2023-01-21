@@ -20,14 +20,9 @@
 }
 /*botones*/
 .boton-user-name{     
-border-radius: 100%;
-margin-top: 2rem;  
-margin-left: 2rem;
-   }
-   .boton-user{
-      height: 2rem;
-      width: 2rem;         
-   }  
+   border-radius: 100%;
+}
+   
 /*Navegador*/
 
 .navbar{
@@ -78,7 +73,8 @@ color: rgb(255, 255, 255);
  }
  
  .formulario{
-    background-color: #409dc4;
+    background-color: #ffffff;
+    Opacity : 0.5;
     margin: -5rem auto 0 auto;
     width: min( 60rem, 100%);
     padding: 2rem;
