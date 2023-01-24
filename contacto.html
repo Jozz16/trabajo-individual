@@ -12,116 +12,66 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />   
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/regala.css">
 </head>
 <header>
-   <!-- Navegacion -->
-   <nav class="navbar navbar-expand-lg ">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="container collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="regala.html">Regala</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="encuentra.html">Encuentra</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contactanos</a>
-                </li>
-            </ul>
-            
-                
-                <div class="col-4 col-md-1">
-                    <a href="#">
-                        <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
-                            data-placement="bottom" title="Ingresa"><i
-                                class="fa-solid fa-person-walking-arrow-right text-white"></i></button>
-                    </a>
-                </div>
-        
-                <div class="col-4 col-md-2">
-                    <a href="registrate.html">
-                        <button class="btn btn-outline-dark boton-user-name " type="button" data-toggle="tooltip"
-                            data-placement="bottom" title="Registrate"><i class="fa-solid fa-person-circle-plus text-white"></i></button>
-                    </a>
-                </div>
-            
-        </div>
-    </div>
-</nav>
-
-
+  <div id="divNav"></div>
 </header>
 
 <body>
   <video class="video-background" src="foto/f4.mp4 " autoplay loop></video>
-  <section>
+  <main class="container">
+    <h3 class="text-center text-light">Contacto</h3>
+
+    <div class="contacto-bg"></div>
+
     <form class="formulario">
-
-      <fieldset>
-        <legend class="tilte-form"> Contactanos  </legend>
-          <div class="contenedor-campos">
-            <div class="campos">
-              <label >Nombre</label>
-              <input id="itNombre" class="input-text" type="text" placeholder=" Tu Nombre">
-              <div id="mensaje1" class="errores"></div>
-            </div>
-            <div class="campos">
-              <label >Télefono</label>
-              <input id="itNum" class="input-text" type="number" placeholder="Tu Telefono">
-              <div id="mensaje2" class="errores"></div>
-            </div>
-            <div class="campos">
-              <label >Correo</label>
-              <input id="itMail" class="input-text" type="email" placeholder="Tu Email">
-              <div id="mensaje3" class="errores"></div>
-            </div>
-            <div class="campos">
-              <label >Mensaje</label>
-              <textarea class="input-text"></textarea>
-            </div>
-          </div>
-          <!--.contenedor-campos-->
+      <label class="campo__label" for="nombre">Nombre</label>
+        <div class="campo">
+            
+            <input 
+                class="campo__field"
+                id="nombre" 
+                type="text" 
+                placeholder="Tu nombre"
+            >
         </div>
-        <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-outline-dark">Solicitar</button>
+        <label class="campo__label" for="nombre">telefono</label>
+        <div class="campo">
+            
+            <input 
+                class="campo__field"
+                id="telefono" 
+                type="number" 
+                placeholder="Tu telefono"
+            >
+        </div>
+        <label class="campo__label" for="email">E-mail</label>
+        <div class="campo">
+            
+            <input 
+                class="campo__field"
+                id="email" 
+                type="email" 
+                placeholder="Tu email"
+            >
+        </div>
+        <label class="campo__label" for="mensaje">Mensaje</label>
+        <div class="campo">
+            
+            <textarea 
+                class="campo__field campo__field--textarea"
+                id="mensaje"
+            ></textarea>
+        </div>
+        
+        <div class="d-flex justify-content-end mb-3">
+          <button type="submit" value="Enviar" class="btn btn-outline-danger text-dark">Solicitar</button>
       </div>
-      </fieldset>
-
     </form>
 
-  </section>
-  <script>  
+</main>
 
-    $(function(){
-      $("#bEnviar").click(function(){
-        var nombre = $("#itNombre").val();
-        var numero = $("#itNum").val();
-        var correo = $("#itMail").val();
-        // console.log(numero,correo,nombre)
-        
-        
-        if(nombre == ""){
-          $("#mensaje1").text("Nombre requerido");
-          
-        }
-        if(numero == ""){
-          $("#mensaje2").text("Numero requerido");
-          
-        }
-        if(correo == ""){
-          $("#mensaje3").text("Email requerido");
-          
-        }
-      });
-    });
-  </script>
   <footer class="footer">
   Derechos reservados
 </footer>
@@ -137,5 +87,7 @@
 <script>$(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })</script>
+<script src="js/top.js"></script>
+<script src="js/contacto.js"></script>
 </body>
 </html>

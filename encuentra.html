@@ -12,53 +12,15 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <link rel="stylesheet" href="css/style.css">
+    <link href="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css
+        " rel="stylesheet">
+    </link>
+
+    <link rel="stylesheet" href="css/regala.css">
 </head>
 <header>
-    <!-- Navegacion -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="container collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="regala.html">Regala</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="encuentra.html">Encuentra</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contactanos</a>
-                    </li>
-                </ul>
-
-
-                <div class="col-4 col-md-1">
-                    <a href="#">
-                        <button class="btn btn-outline-dark boton-user-name" type="button" data-toggle="tooltip"
-                            data-placement="bottom" title="Ingresa"><i
-                                class="fa-solid fa-person-walking-arrow-right text-white"></i></button>
-                    </a>
-                </div>
-
-                <div class="col-4 col-md-2">
-                    <a href="registrate.html">
-                        <button class="btn btn-outline-dark boton-user-name " type="button" data-toggle="tooltip"
-                            data-placement="bottom" title="Registrate"><i
-                                class="fa-solid fa-person-circle-plus text-white"></i></button>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-
+    <div id="divNav"></div>
 </header>
 
 <body>
@@ -83,7 +45,8 @@
                 </div>
             </div>
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-danger text-dark">Solicitar</button>
+                <button id="Botton1" onclick="imprimir()" data-id="1" type="button" class="btn btn-outline-danger text-dark " data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Datos de contacto</button>
             </div>
         </div>
 
@@ -99,7 +62,8 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-danger text-dark">Solicitar</button>
+                <button id="Botton1" type="button" class="btn btn-outline-danger text-dark" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Datos de contacto</button>
             </div>
         </div>
         <div class="Contenedor row p-5">
@@ -114,17 +78,24 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-danger text-dark">Solicitar</button>
+                <button type="button" class="btn btn-outline-danger text-dark">Datos de contacto</button>
             </div>
         </div>
     </div>
 
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="divModal" class="modal-dialog"> -->
+            
+        </div>
+    </div>
+    <!-- Modal -->
     <footer class="footer">
         Derechos reservados
     </footer>
 
     <!-- hoja js propia -->
-    <script src="/js/scripts.js"></script>
+    <!-- <script src="/js/scripts.js"></script> -->
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -135,6 +106,12 @@
     <script>$(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })</script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js
+        "></script>
+    <script src="js/top.js"></script>
+    <script src="js/encuentra.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

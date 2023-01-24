@@ -11,13 +11,7 @@
      font-size: large;
  }
  
- /*logo*/
- .logo{
-   width: 30%;
-   margin-top: 0.5rem;
-   margin-bottom: 0.5rem;
-   margin-left: 0.5rem;
-}
+ 
 /*botones*/
 .boton-user-name{     
    border-radius: 100%;
@@ -25,17 +19,19 @@
    
 /*Navegador*/
 
-.navbar{
-margin-bottom: 2rem;
-}
-.nav-link{
- color: rgb(255, 255, 255);
-}
-.nav-item{
-padding: 0 0.5rem;
+.navbar {
+   margin-bottom: 2rem;
 }
 
-/*Descripccion*/
+.nav-link {
+   color: rgb(255, 255, 255);
+}
+
+.nav-item {
+   padding: 0 0.5rem;
+}
+
+Descripccion
 .container-1{
 background-color: var(--gris);
 margin: 0 auto;
@@ -66,7 +62,7 @@ color: rgb(255, 255, 255);
  
  .contacto-bg{
     background-image: url(../foto/chayanne-cantante-spot-navidad-falabella-2.jpg);
-    height: 40rem;
+    height: 20rem;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 1rem;
@@ -130,12 +126,11 @@ color: rgb(255, 255, 255);
    margin-bottom: 3rem;
 }
 .Contenedor{
+   background-color: rgba(255, 255, 255, 0.521);
    margin-bottom: 1rem;
-   padding-bottom: 2rem;
-   border: 2px ridge #1C6EA4;
    border-radius: 1rem;
-   -webkit-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58); 
-box-shadow: 1px 0px 17px 4px rgba(0,0,0,0.58);
+   height: 23rem;
+  
 }
 .video-background{
    border: 0;

@@ -1,19 +1,20 @@
 // Declaracion de variables a usar
 const nombreInput = document.getElementById('nombre');
-const contraseñaInput = document.getElementById('contraseña');
 const emailInput = document.querySelector('#email');
+const mensajeInput = document.getElementById('mensaje');
 const formulario = document.querySelector('.formulario')
-
+const telefono = document.getElementById('telefono')
 
 const datos = {
     nombre:'',
-    email:'', 
-    contraseña:''
+    email:'',
+    mensaje:'',
+    telefono:''
 }
 
 nombreInput.addEventListener('input', leerTexto)
 emailInput.addEventListener('input', leerTexto)
-contraseñaInput.addEventListener('input', leerTexto)
+mensajeInput.addEventListener('input', leerTexto)
 
 // Evento submit 
 formulario.addEventListener('submit', function(e){
@@ -21,8 +22,8 @@ formulario.addEventListener('submit', function(e){
     
     // Validar el formulario
 
-    const {nombre, email, contraseña} = datos
-    if(nombre == '' || email == ''||contraseña== ''){
+    const {nombre, email, mensaje,telefono} = datos
+    if(nombre == '' || email == '' || mensaje == ''|| telefono == ''){
         mostrarError('Todos los campos son obligatorios*')
         return
     }
