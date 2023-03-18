@@ -20,6 +20,28 @@ app.get("/",(req,res)=>{
    res.render("index")
 
 });
+app.get("/contactanos",(req,res)=>{
+   
+   res.render("contacto")
+
+});
+app.get("/encuentra",(req,res)=>{
+   
+   res.render("encuentra")
+
+});
+app.get("/regala",(req,res)=>{
+   
+   res.render("regala")
+
+});
+app.get("/registrate",(req,res)=>{
+   
+   res.render("registrate")
+
+});
+
+
 
 
 // plantilla abajo

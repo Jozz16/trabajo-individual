@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css
+        " rel="stylesheet">
+    </link>
+
+    <link rel="stylesheet" href="css/regala.css">
+</head>
+<header>
+    {{>nav}}
+</header>
+
+<body>
+
+    <video class="video-background" src="foto/f4.mp4 " autoplay loop></video>
+    <div class=" titulo col-9 text-white">
+        <h1>Busca lo que necesitas</h1>
+    </div>
+    <div class="container">
+        <div class="Contenedor row p-5">
+
+            <div class=" col-4">
+                <h4 class="texto-titulo pb-4">Estanteria</h4>
+                <img class="img" src="/foto/download.jpg" alt="Prueba">
+            </div>
+            <div class="col-6">
+                <h4 class=" texto-titulo pb-4">Titulo de la publicacion</h4>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam
+                    elit
+                    tincidunt elit, sed ultricies magna l
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button id="Botton1" onclick="array(1)" data-id="1" type="button" class="btn btn-outline-danger text-dark " data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Datos de contacto</button>
+            </div>
+        </div>
+
+        <div class="Contenedor row p-5">
+            <div class=" col-4">
+                <h4 class="pb-4">Nombre del producto</h4>
+                <img class="img" src="/foto/mesa.jpg" alt="Prueba">
+            </div>
+            <div class="col-6">
+                <h4 class="texto-titulo pb-4">Titulo de la publicacion</h4>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam elit
+                tincidunt elit, sed ultricies magna l
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button id="Botton2" type="button" onclick="array(2)" data-id="2" class="btn btn-outline-danger text-dark" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Datos de contacto</button>
+            </div>
+        </div>
+        <div class="Contenedor row p-5">
+            <div class=" col-4">
+                <h4 class="pb-4">Nombre del producto</h4>
+                <img class="img" src="/foto/tele.jpg" alt="Prueba">
+            </div>
+            <div class="col-6">
+                <h4 class="texto-titulo pb-4">Titulo de la publicacion</h4>
+                Lorem ipsum dolor sit amet, consecit. Phasellus non lectus sagittis, convallis est vel, e
+                gestas felis. Suspendisse potenti. Quisque molestie eros nisl, vitae bibendum dolor blandit at. Mauris
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button id="Botton3" type="button" onclick="array(3)" data-id="3" class="btn btn-outline-danger text-dark" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Datos de contacto</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="divModal" class="modal-dialog"> -->
+            
+        </div>
+    </div>
+    <!-- Modal -->
+    {{>footer}}
+
+    <!-- hoja js propia -->
+    <!-- <script src="/js/scripts.js"></script> -->
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script>$(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })</script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js
+        "></script>
+    <script src="js/top.js"></script>
+    <script src="js/encuentra.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
