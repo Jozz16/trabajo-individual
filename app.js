@@ -11,7 +11,7 @@ app.set('views', './views')
 
 //midlawares
 app.use('/js', express.static('/js'))
-app.use(express.static( path.join( __dirname , 'node_modules')))
+app.use(express.static( path.join( __dirname , 'node_modules/bootstrap/dist')))
 app.use(express.static( path.join( __dirname , 'public')))
 
 
