@@ -4,16 +4,18 @@ const puerto=3000;
 const hbs = require('hbs')
 const path = require('path');
 
-hbs.registerPartials(__dirname + '/views/partials')
+hbs.registerPartials( __dirname + '/views/partials')
 
 app.set('view engine', 'hbs')
 app.set('views', './views')
+
+//midlawares
 app.use('/js', express.static('/js'))
-app.use(express.static( path.join(__dirname , '/node_modules/bootstrap/dist')))
-app.use(express.static( path.join(__dirname , 'public')))
+app.use(express.static( path.join( __dirname , 'node_modules')))
+app.use(express.static( path.join( __dirname , 'public')))
 
 
-
+// static
 
 app.get("/",(req,res)=>{
    
