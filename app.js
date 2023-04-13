@@ -1,4 +1,6 @@
 const express = require('express')
+const { Pool } = require("pg")
+
 const app = express()
 const puerto=3000;
 const hbs = require('hbs')
@@ -16,35 +18,23 @@ app.use(express.static( path.join( __dirname , 'public')))
 
 
 // static
-
 app.get("/",(req,res)=>{
-   
    res.render("index")
-
 });
 app.get("/contactanos",(req,res)=>{
-   
    res.render("contacto")
-
 });
 app.get("/encuentra",(req,res)=>{
-   
    res.render("encuentra")
-
 });
 app.get("/regala",(req,res)=>{
-   
    res.render("regala")
-
 });
 app.get("/registrate",(req,res)=>{
-   
+   const nombre = req.
+
    res.render("registrate")
-
 });
-
-
-
 
 // plantilla abajo
 app.all("*",(req,res)=>{
