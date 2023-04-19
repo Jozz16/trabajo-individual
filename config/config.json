@@ -1,9 +1,0 @@
-{
-  "development": {
-    "username": "postgres",
-    "password": "1234",
-    "database": "teloregaloDB",
-    "host": "localhost",
-    "dialect": "postgres"
-  }
-}

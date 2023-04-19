@@ -1,11 +1,32 @@
 {
+  "name": "trabajo-individual",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jozz16/trabajo-individual.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jozz16/trabajo-individual/issues"
+  },
+  "homepage": "https://github.com/Jozz16/trabajo-individual#readme",
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
     "node": "^19.8.1",
+    "nodemon": "^2.0.22",
     "pg": "^8.10.0",
-    "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.0"
   }
 }

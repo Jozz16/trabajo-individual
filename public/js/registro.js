@@ -17,7 +17,7 @@ contraseñaInput.addEventListener('input', leerTexto)
 
 // Evento submit 
 formulario.addEventListener('submit', function(e){
-    e.preventDefault()
+    // e.preventDefault()
     
     // Validar el formulario
 
