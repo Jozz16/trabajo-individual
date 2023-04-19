@@ -40,6 +40,36 @@ app.get("/regala", (req, res) => {
   res.render("regala");
 });
 
+app.post("/publicaciones", async (req, res) => {
+    const { nombre_producto, titulo, url, descripcion } = req.body;
+  
+    try {
+      const response = await fetch("http://localhost:3002/publicacion/v1", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre_producto,
+          titulo,
+          url,
+          descripcion,
+        }),
+      });
+  
+      if (response.ok) {
+        console.log(`La publicación de ${nombre_producto} ha sido creada`);
+        res.status(201).send(`La publicación de ${nombre_producto} ha sido creada`);
+      } else {
+        console.error("Error al crear la publicación");
+        res.status(500).send("Error al crear la publicación");
+      }
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send(error.message);
+    }
+  });
+
+
+
 // Ruta para mostrar la página de inicio de sesión
 app.get("/iniciar-sesion", (req, res) => {
   res.render("inicio-sesion");
