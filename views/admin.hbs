@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{{>head}}
+
+<body>
+  <header class="bg-primary text-white">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="my-4">Mi dashboard</h1>
+      <p class="d-flex justify-content-end align-items-center">Bienvenido, admin</p>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 bg-light bg-gray d-flex flex-column align-items-start">
+        <div class="p-3">
+          <h2 class="mb-0">Menú</h2>
+        </div>
+        <div class="flex-grow-1">
+          <ul class="list-group w-100">
+            <li class="list-group-item mb-3"><a href="/tablas-publicaciones">Ver todas las publicaciones</a></li>
+            <li class="list-group-item mb-3"><a href="#">Ver todos los usuarios</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <p>tablas</p>
+      </div>
+    </div>
+  </div>
+
+  {{>footer}}
+
+</body>
+
+</html>

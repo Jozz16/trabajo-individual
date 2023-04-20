@@ -287,3 +287,15 @@ color: rgb(255, 255, 255);
    }
 }
 
+.bg-light {
+   height: 100vh;
+ }
+
+ .flex-grow-1 {
+   overflow-y: auto;
+ }
+
+ ul.list-group {
+   overflow-y: auto;
+   height: calc(100vh - 110px);
+ }
