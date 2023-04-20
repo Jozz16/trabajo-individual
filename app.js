@@ -1,12 +1,11 @@
 const express = require("express");
-const { Pool } = require("pg");
 
 const app = express();
 const puerto = 3001;
 const hbs = require("hbs");
 const path = require("path");
-const { METHODS } = require("http");
-const { json } = require("sequelize");
+const LocalStorage = require('node-localstorage').LocalStorage;
+
 
 hbs.registerPartials(__dirname + "/views/partials");
 
@@ -19,7 +18,7 @@ app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+const localStorage = new LocalStorage('./scratch');
 // Ruta para mostrar la página principal
 app.get("/", (req, res) => {
   res.render("index");
@@ -31,10 +30,18 @@ app.get("/contactanos", (req, res) => {
 });
 
 // Ruta para mostrar la página de búsqueda de productos
-app.get("/encuentra", (req, res) => {
-  res.render("encuentra");
-});
 
+app.get("/encuentra", async (req, res) => {
+  try {
+    const response = await fetch('http://localhost:3002/todas-las-publicaciones');
+    const data = await response.text();
+    const publicaciones = JSON.parse(data);
+
+    res.render('encuentra', {publicaciones});
+  } catch(error) {
+    console.error(error);
+  }
+});
 // Ruta para mostrar la página de regalos
 app.get("/regala", (req, res) => {
   res.render("regala");
@@ -46,10 +53,10 @@ app.post("/publicaciones", async (req, res) => {
     try {
       const response = await fetch("http://localhost:3002/publicacion/v1", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "token":localStorage.getItem('token') },
         body: JSON.stringify({
-          nombre_producto,
-          titulo,
+          nombreProducto: nombre_producto,
+          Titulo:titulo,
           url,
           descripcion,
         }),
@@ -67,14 +74,10 @@ app.post("/publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-
-
-
 // Ruta para mostrar la página de inicio de sesión
 app.get("/iniciar-sesion", (req, res) => {
   res.render("inicio-sesion");
 });
-
 // Ruta para procesar la petición de inicio de sesión
 app.post("/iniciar-sesion", async (req, res) => {
   const { email, password } = req.body;
@@ -87,11 +90,18 @@ app.post("/iniciar-sesion", async (req, res) => {
         password,
       }),
     });
-
-    if (response.ok) {
-      console.log(`El usuario con email ${email} se ha logueado`);
-      res.status(200).send(`El usuario con email ${email} se ha logueado`);
-    } else {
+    const responseBody = await response.json();                                // convierte la respuesta a formato JSON
+    const token = responseBody.token; 
+    const rol = responseBody.rolUser;// accede al token en el cuerpo de la respuesta
+    localStorage.setItem("token", token);
+    localStorage.setItem("rol", rol);
+    console.log(localStorage.getItem('rol'))
+    
+    if (localStorage.getItem('rol') == user) {
+      res.render("index")
+    }else if(localStorage.getItem('rol') == admin){
+      res.send('si')//aqui va la pagina de admin)
+    } else  {
       console.error("Error al iniciar sesión");
       res.status(500).send("Error al iniciar sesión");
     }
@@ -100,12 +110,10 @@ app.post("/iniciar-sesion", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
-
 // Ruta para mostrar la página de registro de usuario
 app.get("/registrate", (req, res) => {
   res.render("registrate");
 });
-
 // Ruta para procesar la petición de registro de usuario
 app.post("/registrate", async (req, res) => {
   const { name, email, password } = req.body;
@@ -132,12 +140,10 @@ app.post("/registrate", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
-
 // Ruta para manejar las peticiones de cualquier otra página que no existe
 app.all("*", (req, res) => {
   res.status(404).send("pagina no existe");
 });
-
 //plantilla abajo
 app.listen(puerto, () => {
   console.log("servicio levantado");

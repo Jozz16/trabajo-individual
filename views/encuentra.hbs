@@ -11,61 +11,22 @@
     <div class=" titulo col-9 text-white">
         <h1>Busca lo que necesitas</h1>
     </div>
-    <div class="container">
-        <div class="Contenedor row p-5">
-
-            <div class=" col-4">
-                <h4 class="texto-titulo pb-4">Estanteria</h4>
-                <img class="img" src="/foto/download.jpg" alt="Prueba">
-            </div>
-            <div class="col-6">
-                <h4 class=" texto-titulo pb-4">Titulo de la publicacion</h4>
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam
-                    elit
-                    tincidunt elit, sed ultricies magna l
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        {{#each publicaciones}}
+        <div class="col-md-4 mb-4">
+            <div class="card" style="opacity: 0.5;">
+                <img src="{{this.url}}" class="card-img-top" alt="{{this.nombreProducto}}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.descripcion}}</p>
+                    <button id="Botton1" onclick="array(1)" data-id="1" type="button" class="btn btn-outline-danger text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Datos de contacto</button>
                 </div>
             </div>
-            <div class="d-flex justify-content-end">
-                <button id="Botton1" onclick="array(1)" data-id="1" type="button" class="btn btn-outline-danger text-dark " data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Datos de contacto</button>
-            </div>
         </div>
-
-        <div class="Contenedor row p-5">
-            <div class=" col-4">
-                <h4 class="pb-4">Nombre del producto</h4>
-                <img class="img" src="/foto/mesa.jpg" alt="Prueba">
-            </div>
-            <div class="col-6">
-                <h4 class="texto-titulo pb-4">Titulo de la publicacion</h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, arcu ac rutrum vehicula, diam elit
-                tincidunt elit, sed ultricies magna l
-            </div>
-
-            <div class="d-flex justify-content-end">
-                <button id="Botton2" type="button" onclick="array(2)" data-id="2" class="btn btn-outline-danger text-dark" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Datos de contacto</button>
-            </div>
-        </div>
-        <div class="Contenedor row p-5">
-            <div class=" col-4">
-                <h4 class="pb-4">Nombre del producto</h4>
-                <img class="img" src="/foto/tele.jpg" alt="Prueba">
-            </div>
-            <div class="col-6">
-                <h4 class="texto-titulo pb-4">Titulo de la publicacion</h4>
-                Lorem ipsum dolor sit amet, consecit. Phasellus non lectus sagittis, convallis est vel, e
-                gestas felis. Suspendisse potenti. Quisque molestie eros nisl, vitae bibendum dolor blandit at. Mauris
-            </div>
-
-            <div class="d-flex justify-content-end">
-                <button id="Botton3" type="button" onclick="array(3)" data-id="3" class="btn btn-outline-danger text-dark" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Datos de contacto</button>
-            </div>
-        </div>
+        {{/each}}
     </div>
-
+</div>
     <!-- modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div id="divModal" class="modal-dialog"> -->
@@ -84,15 +45,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <script>$(function () {
+    {{!-- <script>$(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })</script>
     <script src="
         https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js
-        "></script>
-    <script src="js/top.js"></script>
+        "></script> --}}
+    {{!-- <script src="js/top.js"></script> --}}
     <script src="js/encuentra.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 </body>
 
 </html>

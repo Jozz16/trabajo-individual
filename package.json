@@ -25,6 +25,7 @@
     "hbs": "^4.2.0",
     "morgan": "^1.10.0",
     "node": "^19.8.1",
+    "node-localstorage": "^2.2.1",
     "nodemon": "^2.0.22",
     "pg": "^8.10.0",
     "sequelize": "^6.31.0"
