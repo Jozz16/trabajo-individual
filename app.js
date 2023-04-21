@@ -185,7 +185,26 @@ app.get("/tablas-publicaciones", async (req, res) => {
     }
   });
 
-
+  app.post('/editar-usuario-buscado/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const { name, email, tipoRol } = req.body;
+      
+      const response = await fetch(`http://localhost:3002/actualizar-usuario-buscado/${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, tipoRol })
+      });
+      console.log(await response.json());
+      // res.render('tabla-usuarios');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error.message);
+    }
+  });
+  
 
 
 
