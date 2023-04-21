@@ -155,18 +155,29 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-
-  app.get('/editar-publicacion/:id', (req, res) => {
-    const userId = req.params.id;
-    fetch(`https://ejemplo.com/api/usuarios/${userId}`)
-      .then(response => response.json())
-      .then(usuario => {
-        res.render('formulario-edicion', { usuario });
-      })
-      .catch(error => console.error(error));
-  });
   
+  app.get('/usuarios', async (req, res) => {
+    try {
+      const response = await fetch('http://localhost:3002/usuarios');
+      const usuarios = await response.json();
+      res.render('tabla-usuarios', { usuarios });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error.message);
+    }
+  });
 
+  app.get('/editar-usuario/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const response = await fetch(`http://localhost:3002/usuarios/${userId}`);
+      const usuario = await response.json();
+      res.render('formulario-edicion-usuario', { usuario });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error.message);
+    }
+  });
 
 
 

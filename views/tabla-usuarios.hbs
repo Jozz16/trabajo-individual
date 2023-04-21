@@ -30,33 +30,27 @@
           <table class="table">
             <thead>
               <tr>
-                <th>nombreProducto</th>
-                <th>Titulo</th>
-                <th>url</th>
-                <th>descripcion</th>
-                <th>fecha inicio</th>
-                <th>fecha de cambio</th>
-                <th>nombre Usuario</th>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
-              {{#each publicaciones}}
+              {{#each usuarios}}
                 
               <tr>
-                <td>{{this.nombreProducto}}</td>
-                <td>{{this.Titulo}}</td>
-                <td>{{this.url}}</td>
-                <td>{{this.descripcion}}</td>
-                <td>{{this.createdAt}}</td>
-                <td>{{this.updatedAt}}</td> 
-                <td>{{User.name}}</td>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.tipoRol}}</td>
                 
                 <td>
+                  <a href="/editar-usuario/:{{this.id}}" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></a>
                   <button type="button" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
                 </td>
               </tr>
-                
               {{/each}}
             </tbody>
           </table>
