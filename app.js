@@ -197,8 +197,8 @@ app.get("/tablas-publicaciones", async (req, res) => {
         },
         body: JSON.stringify({ name, email, tipoRol })
       });
-      console.log(await response.json());
-      // res.render('tabla-usuarios');
+      
+      res.render('tabla-usuarios');
     } catch (error) {
       console.error(error);
       res.status(500).send(error.message);
