@@ -17,6 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const localStorage = new LocalStorage("./scratch");
 
+// Registra el helper de hbs
+hbs.registerHelper('eq', function(a, b, options) {
+  return a === b ? options.fn(this) : options.inverse(this);
+});
 
 // Ruta para mostrar la página principal
 app.get("/", (req, res) => {
@@ -97,7 +101,7 @@ app.post("/iniciar-sesion", async (req, res) => {
     const rol = responseBody.rolUser; // accede al token en el cuerpo de la respuesta
     localStorage.setItem("token", token);
     localStorage.setItem("rol", rol);
-
+    
     
 
     if (localStorage.getItem("rol") === "user") {
@@ -169,12 +173,12 @@ app.get("/tablas-publicaciones", async (req, res) => {
 
   app.get('/editar-usuario/:id', async (req, res) => {
     try {
-      const userId = req.params.id;
-    
-      const response = await fetch(`http://localhost:3002/usuarios/${userId}`);
-      const usuario = await response.json();
-      console.log(usuario)
-      res.render('formulario-edicion-usuario', { usuario });
+      const userId = req.params.id; 
+      console.log(userId)
+      const response = await fetch(`http://localhost:3002/buscar-usuarios/${userId}`);
+      const {usuario, roles} = await response.json();
+      
+      res.render('formulario-edicion-usuario', { usuario, roles });
     } catch (error) {
       console.error(error);
       res.status(500).send(error.message);
