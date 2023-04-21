@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const puerto = 3001;
+const puerto = 3003;
 const hbs = require("hbs");
 const path = require("path");
 const LocalStorage = require("node-localstorage").LocalStorage;
@@ -170,8 +170,10 @@ app.get("/tablas-publicaciones", async (req, res) => {
   app.get('/editar-usuario/:id', async (req, res) => {
     try {
       const userId = req.params.id;
+    
       const response = await fetch(`http://localhost:3002/usuarios/${userId}`);
       const usuario = await response.json();
+      console.log(usuario)
       res.render('formulario-edicion-usuario', { usuario });
     } catch (error) {
       console.error(error);

@@ -7,7 +7,7 @@
   <header class="bg-primary text-white">
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="my-4">Mi dashboard</h1>
-      <p class="d-flex justify-content-end align-items-center">Bienvenido, admin</p>
+      <p class="d-flex justify-content-end align-items-center">Bienvenido, {{usuario.name}}</p>
     </div>
   </header>
 
@@ -28,31 +28,25 @@
       <div class="col-md-9">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form action="/editar-usuario/{{usuario.id}}" method="post">
+      
+      <form action="/editar-usuario/{{id}}" method="post">
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input type="text" class="form-control" id="name" name="name" value="{{usuario.name}}" required>
+          <input type="text" class="form-control" id="name" name="name" value="{{this.name}}" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" name="email" value="{{usuario.email}}" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" value="{{usuario.password}}" required>
+          <input type="email" class="form-control" id="email" name="email" value="{{email}}" required>
         </div>
         <div class="form-group">
           <label for="tipoRol">Rol</label>
-          <select class="form-control" id="tipoRol" name="tipoRol">
-            <option value="usuario"{{usuario.tipoRol === 'usuario' ? ' selected' : ''}}>Usuario</option>
-            <option value="admin"{{usuario.tipoRol === 'admin' ? ' selected' : ''}}>Administrador</option>
-
-          </select>
+          <input type="text" class="form-control" id="tipoRol" name="tipoRol" value="{{tipoRol}}" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
       </form>
+      
     </div>
   </div>
 </div>
