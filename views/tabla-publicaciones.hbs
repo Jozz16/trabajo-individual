@@ -36,24 +36,28 @@
                 <th>descripcion</th>
                 <th>fecha inicio</th>
                 <th>fecha de cambio</th>
+                <th>nombre Usuario</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
               {{#each publicaciones}}
+                
               <tr>
                 <td>{{this.nombreProducto}}</td>
                 <td>{{this.Titulo}}</td>
                 <td>{{this.url}}</td>
                 <td>{{this.descripcion}}</td>
                 <td>{{this.createdAt}}</td>
-                <td>{{this.updatedAt}}</td>
-                <td>{{this.User.name}}</td>
+                <td>{{this.updatedAt}}</td> 
+                <td>{{User.name}}</td>
+                
                 <td>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" href="/editar-publicacion?id={{this.id}}"><i class="fas fa-edit"></i></button>
                   <button type="button" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
                 </td>
               </tr>
+                
               {{/each}}
             </tbody>
           </table>

@@ -18,16 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 const localStorage = new LocalStorage("./scratch");
 
 
-
-
-
 // Ruta para mostrar la página principal
 app.get("/", (req, res) => {
   res.render("index");
-});
-// Ruta para mostrar la página de contacto
-app.get("/contactanos", (req, res) => {
-  res.render("contacto");
 });
 // Ruta para mostrar la página de búsqueda de productos
 app.get("/encuentra", async (req, res) => {
@@ -49,7 +42,7 @@ app.get("/regala", (req, res) => {
 });
 app.post("/publicaciones", async (req, res) => {
   const { nombre_producto, titulo, url, descripcion } = req.body;
-
+if(localStorage.getItem('rol') == 'user'){
   try {
     const response = await fetch("http://localhost:3002/publicacion/v1", {
       method: "POST",
@@ -78,6 +71,10 @@ app.post("/publicaciones", async (req, res) => {
     console.error(error.message);
     res.status(500).send(error.message);
   }
+} else {
+  res.render('inicio-sesion')
+}
+  
 });
 // Ruta para mostrar la página de inicio de sesión
 app.get("/iniciar-sesion", (req, res) => {
@@ -100,6 +97,8 @@ app.post("/iniciar-sesion", async (req, res) => {
     const rol = responseBody.rolUser; // accede al token en el cuerpo de la respuesta
     localStorage.setItem("token", token);
     localStorage.setItem("rol", rol);
+
+    
 
     if (localStorage.getItem("rol") === "user") {
       res.render("index");
@@ -147,14 +146,24 @@ app.post("/registrate", async (req, res) => {
 
 app.get("/tablas-publicaciones", async (req, res) => {
     try {
-      const response = await fetch("http://localhost:3002/todas-las-publicaciones");
+      const response = await fetch("http://localhost:3002/todas-las-publicaciones/autor");
       const publicaciones = await response.json();
-      console.log(publicaciones);
+      console.log(publicaciones[0].Publicacions);
       res.render("tabla-publicaciones", { publicaciones }); // Renderiza la plantilla HBS con los datos de las publicaciones
     } catch (error) {
       console.error(error);
       res.status(500).send(error.message);
     }
+  });
+
+  app.get('/editar-publicacion/:id', (req, res) => {
+    const userId = req.params.id;
+    fetch(`https://ejemplo.com/api/usuarios/${userId}`)
+      .then(response => response.json())
+      .then(usuario => {
+        res.render('formulario-edicion', { usuario });
+      })
+      .catch(error => console.error(error));
   });
   
 
