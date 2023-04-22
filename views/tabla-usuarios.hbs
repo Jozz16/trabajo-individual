@@ -48,7 +48,8 @@
                 
                 <td>
                   <a href="/editar-usuario/{{this.id}}" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></a>
-                  <button type="button" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                  <a href="/eliminar-usuario/{{this.id}}?_method=delete" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></a>
+
                 </td>
               </tr>
               {{/each}}

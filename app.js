@@ -3,6 +3,7 @@ const app = express();
 const puerto = 3003;
 const hbs = require("hbs");
 const path = require("path");
+const methodOverRide = require('method-override')
 const LocalStorage = require("node-localstorage").LocalStorage;
 hbs.registerPartials(__dirname + "/views/partials");
 
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverRide("_method", {methods: ["GET","POST"]}))
 const localStorage = new LocalStorage("./scratch");
 
 // Registra el helper de hbs
@@ -137,7 +139,7 @@ app.post("/registrate", async (req, res) => {
 
     if (response.ok) {
       console.log(`El usuario ${name} ha sido creado`);
-      res.status(201).send(`El usuario ${name} ha sido creado`);
+      res.status(201).redirect("/iniciar-sesion")
     } else {
       console.error("Error al crear el usuario");
       res.status(500).send("Error al crear el usuario");
@@ -152,7 +154,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
     try {
       const response = await fetch("http://localhost:3002/todas-las-publicaciones/autor");
       const publicaciones = await response.json();
-      console.log(publicaciones[0].Publicacions);
+      console.log(publicaciones);
       res.render("tabla-publicaciones", { publicaciones }); // Renderiza la plantilla HBS con los datos de las publicaciones
     } catch (error) {
       console.error(error);
@@ -205,7 +207,34 @@ app.get("/tablas-publicaciones", async (req, res) => {
     }
   });
   
-
+  app.delete('/eliminar-usuario/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      
+      const response = await fetch(`http://localhost:3002/eliminar-usuario/${userId}`, {
+        method: 'DELETE',
+      });
+  
+      res.redirect('/usuarios');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error.message);
+    }
+  });
+  app.delete('/eliminar-publicacion/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      
+      const response = await fetch(`http://localhost:3002/eliminar-publicacion/${userId}`, {
+        method: 'DELETE',
+      });
+   
+      res.redirect('/tablas-publicaciones');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error.message);
+    }
+  });
 
 
 
