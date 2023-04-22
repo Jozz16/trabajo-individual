@@ -24,7 +24,6 @@
           </ul>
         </div>
       </div>
-
       <div class="col-md-9">
         <div class="table-responsive">
           <table class="table">
@@ -38,18 +37,15 @@
               </tr>
             </thead>
             <tbody>
-              {{#each usuarios}}
-                
+              {{#each usuarios}}               
               <tr>
                 <td>{{this.id}}</td>
                 <td>{{this.name}}</td>
                 <td>{{this.email}}</td>
                 <td>{{this.tipoRol}}</td>
-                
                 <td>
                   <a href="/editar-usuario/{{this.id}}" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></a>
                   <a href="/eliminar-usuario/{{this.id}}?_method=delete" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></a>
-
                 </td>
               </tr>
               {{/each}}
@@ -59,9 +55,6 @@
       </div>
     </div>
   </div>
-
   {{>footer}}
-
 </body>
-
 </html>

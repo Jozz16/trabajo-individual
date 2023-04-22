@@ -10,7 +10,6 @@
       <p class="d-flex justify-content-end align-items-center">Bienvenido, admin</p>
     </div>
   </header>
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 bg-light bg-gray d-flex flex-column align-items-start">
@@ -24,7 +23,6 @@
           </ul>
         </div>
       </div>
-
       <div class="col-md-9">
         <div class="table-responsive">
           <table class="table">
@@ -41,8 +39,7 @@
               </tr>
             </thead>
             <tbody>
-              {{#each publicaciones}}
-                
+              {{#each publicaciones}}            
               <tr>
                 <td>{{this.nombreProducto}}</td>
                 <td>{{this.Titulo}}</td>
@@ -50,13 +47,11 @@
                 <td>{{this.descripcion}}</td>
                 <td>{{this.createdAt}}</td>
                 <td>{{this.updatedAt}}</td> 
-                <td>{{User.name}}</td>
-                
+                <td>{{User.name}}</td>              
                 <td>
                   <a href="/eliminar-publicacion/{{this.id}}?_method=delete" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></a>
                 </td>
-              </tr>
-                
+              </tr>               
               {{/each}}
             </tbody>
           </table>
@@ -64,9 +59,6 @@
       </div>
     </div>
   </div>
-
   {{>footer}}
-
 </body>
-
 </html>

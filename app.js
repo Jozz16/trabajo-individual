@@ -149,7 +149,7 @@ app.post("/registrate", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
-
+// Ruta para mostrar todas las publicaciones
 app.get("/tablas-publicaciones", async (req, res) => {
     try {
       const response = await fetch("http://localhost:3002/todas-las-publicaciones/autor");
@@ -161,7 +161,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-  
+// Ruta para mostrar todas las usuarios
   app.get('/usuarios', async (req, res) => {
     try {
       const response = await fetch('http://localhost:3002/usuarios');
@@ -172,7 +172,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-
+// Ruta para traer un usuario por id
   app.get('/editar-usuario/:id', async (req, res) => {
     try {
       const userId = req.params.id; 
@@ -186,7 +186,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-
+// Ruta para editar un usuario por id 
   app.post('/editar-usuario-buscado/:id', async (req, res) => {
     try {
       const userId = req.params.id;
@@ -206,7 +206,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-  
+// Ruta para eliminar un usuario por id 
   app.delete('/eliminar-usuario/:id', async (req, res) => {
     try {
       const userId = req.params.id;
@@ -221,6 +221,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
+  // Ruta para eliminar una publicacion por id 
   app.delete('/eliminar-publicacion/:id', async (req, res) => {
     try {
       const userId = req.params.id;
@@ -235,21 +236,6 @@ app.get("/tablas-publicaciones", async (req, res) => {
       res.status(500).send(error.message);
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Ruta para manejar las peticiones de cualquier otra página que no existe
 app.all("*", (req, res) => {
   res.status(404).send("pagina no existe");
