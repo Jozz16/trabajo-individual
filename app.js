@@ -261,9 +261,9 @@ app.get("/tablas-publicaciones", async (req, res) => {
     }
   });
 // Ruta para manejar las peticiones de cualquier otra página que no existe
-// app.all("*", (req, res) => {
-//   res.status(404).send("pagina no existe");
-// });
+app.all("*", (req, res) => {
+  res.status(404).send("pagina no existe");
+});
 //plantilla abajo
 app.listen(puerto, () => {
   console.log("servicio levantado");
