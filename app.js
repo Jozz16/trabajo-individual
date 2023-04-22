@@ -5,7 +5,13 @@ const hbs = require("hbs");
 const path = require("path");
 const methodOverRide = require('method-override')
 const LocalStorage = require("node-localstorage").LocalStorage;
+const fileUpload = require('express-fileupload');
+const fs = require('fs');
+const FormData = require('form-data');
+
+
 hbs.registerPartials(__dirname + "/views/partials");
+
 
 app.set("view engine", "hbs");
 app.set("views", "./views");
@@ -17,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverRide("_method", {methods: ["GET","POST"]}))
+app.use(fileUpload());
 const localStorage = new LocalStorage("./scratch");
 
 // Registra el helper de hbs
@@ -47,7 +54,21 @@ app.get("/regala", (req, res) => {
   res.render("regala");
 });
 app.post("/publicaciones", async (req, res) => {
-  const { nombre_producto, titulo, url, descripcion } = req.body;
+  const { nombreProducto, titulo, descripcion } = req.body;
+  
+  const imagen = req.files.imagen;
+  const uploadPath = __dirname + '/public/img/' + imagen.name 
+  const upload =  '/img/' + imagen.name 
+
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('Sin archivo enviado');
+  }
+
+  imagen.mv(uploadPath, function(err) {
+    if (err)
+      return res.status(500).send(err);
+  })
+
 if(localStorage.getItem('rol') == 'user'){
   try {
     const response = await fetch("http://localhost:3002/publicacion/v1", {
@@ -57,18 +78,21 @@ if(localStorage.getItem('rol') == 'user'){
         token: localStorage.getItem("token"),
       },
       body: JSON.stringify({
-        nombreProducto: nombre_producto,
+        nombreProducto: nombreProducto,
         Titulo: titulo,
-        url,
+        upload,
         descripcion,
-      }),
+        
+      }
+      
+      ),
     });
 
     if (response.ok) {
-      console.log(`La publicación de ${nombre_producto} ha sido creada`);
+      console.log(`La publicación de ${nombreProducto} ha sido creada`);
       res
         .status(201)
-        .send(`La publicación de ${nombre_producto} ha sido creada`);
+        .send(`La publicación de ${nombreProducto} ha sido creada`);
     } else {
       console.error("Error al crear la publicación");
       res.status(500).send("Error al crear la publicación");
@@ -237,9 +261,9 @@ app.get("/tablas-publicaciones", async (req, res) => {
     }
   });
 // Ruta para manejar las peticiones de cualquier otra página que no existe
-app.all("*", (req, res) => {
-  res.status(404).send("pagina no existe");
-});
+// app.all("*", (req, res) => {
+//   res.status(404).send("pagina no existe");
+// });
 //plantilla abajo
 app.listen(puerto, () => {
   console.log("servicio levantado");

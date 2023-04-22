@@ -8,19 +8,19 @@
     {{>nav}}
   </header>
   <main class="container ">
-   <form class="formulario mt-5 mb-5" action="/publicaciones" method="POST">
+   <form class="formulario mt-5 mb-5" action="/publicaciones" method="POST" enctype="multipart/form-data">
   <h3 class="text-center text-dark">Subir publicación</h3>
   <label class="campo__label" for="nombre_producto">Nombre del producto</label>
   <div class="campo">
-    <input class="campo__field" id="nombre_producto" name="nombre_producto" type="text" placeholder="Nombre del producto" required>
+    <input class="campo__field" id="nombre_producto" name="nombreProducto" type="text" placeholder="Nombre del producto" required>
   </div>
   <label class="campo__label" for="titulo">Título</label>
   <div class="campo">
     <input class="campo__field" id="titulo" name="titulo" type="text" placeholder="Título" required>
   </div>
-  <label class="campo__label" for="url">URL de la imagen</label>
+  <label class="campo__label" for="url">sube tu imagen</label>
   <div class="campo">
-    <input class="campo__field" id="url" name="url" type="url" placeholder="URL de la imagen" required>
+    <input type="file" class="custom-file-input" id="imagen" name="imagen" accept="image/*" required>
   </div>
   <label class="campo__label" for="descripcion">Descripción</label>
   <div class="campo">
