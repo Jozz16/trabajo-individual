@@ -186,16 +186,18 @@ app.get("/tablas-publicaciones", async (req, res) => {
     }
   });
 // Ruta para mostrar todas las usuarios
-  app.get('/usuarios', async (req, res) => {
-    try {
-      const response = await fetch('http://localhost:3002/usuarios');
-      const usuarios = await response.json();
-      res.render('tabla-usuarios', { usuarios });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send(error.message);
-    }
-  });
+app.get('/usuarios', async (req, res) => {
+  try {
+    const response = await fetch('http://localhost:3002/usuarios');
+    const { users, countByRol } = await response.json();
+    const countUsers = countByRol.find((count) => count.tipoRol === 'user').count;
+    const countAdmins = countByRol.find((count) => count.tipoRol === 'admin').count;
+    res.render('tabla-usuarios', { usuarios: users, countUsers: countUsers, countAdmins: countAdmins });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error.message);
+  }
+});
 // Ruta para traer un usuario por id
   app.get('/editar-usuario/:id', async (req, res) => {
     try {
