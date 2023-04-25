@@ -82,7 +82,6 @@ if(localStorage.getItem('rol') == 'user'){
         Titulo: titulo,
         upload,
         descripcion,
-        
       }
       
       ),
@@ -90,9 +89,7 @@ if(localStorage.getItem('rol') == 'user'){
 
     if (response.ok) {
       console.log(`La publicación de ${nombreProducto} ha sido creada`);
-      res
-        .status(201)
-        .send(`La publicación de ${nombreProducto} ha sido creada`);
+      res.status(201).redirect('/encuentra')
     } else {
       console.error("Error al crear la publicación");
       res.status(500).send("Error al crear la publicación");
@@ -226,7 +223,7 @@ app.get('/usuarios', async (req, res) => {
         body: JSON.stringify({ name, email, tipoRol })
       });
       
-      res.render('tabla-usuarios');
+      res.redirect('/usuarios');
     } catch (error) {
       console.error(error);
       res.status(500).send(error.message);
