@@ -7,7 +7,7 @@ const methodOverRide = require('method-override')
 const LocalStorage = require("node-localstorage").LocalStorage;
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
-const FormData = require('form-data');
+
 
 
 hbs.registerPartials(__dirname + "/views/partials");
@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 app.get("/encuentra", async (req, res) => {
   try {
     const response = await fetch(
-      "http://localhost:3002/todas-las-publicaciones"
+      "http://localhost:3002/api/v1/publicaciones"
     );
     const data = await response.text();
     const publicaciones = JSON.parse(data);
@@ -71,7 +71,7 @@ app.post("/publicaciones", async (req, res) => {
 
 if(localStorage.getItem('rol') == 'user'){
   try {
-    const response = await fetch("http://localhost:3002/publicacion/v1", {
+    const response = await fetch("http://localhost:3002/api/v1/publicacion", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -111,7 +111,7 @@ app.get("/iniciar-sesion", (req, res) => {
 app.post("/iniciar-sesion", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const response = await fetch("http://localhost:3002/login/v1", {
+    const response = await fetch("http://localhost:3002/api/v1/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -148,7 +148,7 @@ app.get("/registrate", (req, res) => {
 app.post("/registrate", async (req, res) => {
   const { name, email, password } = req.body;
   try {
-    const response = await fetch("http://localhost:3002/register/v1", {
+    const response = await fetch("http://localhost:3002/api/v1/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -173,7 +173,7 @@ app.post("/registrate", async (req, res) => {
 // Ruta para mostrar todas las publicaciones
 app.get("/tablas-publicaciones", async (req, res) => {
     try {
-      const response = await fetch("http://localhost:3002/todas-las-publicaciones/autor");
+      const response = await fetch("http://localhost:3002/api/v1/publicaciones/autor");
       const publicaciones = await response.json();
       console.log(publicaciones);
       res.render("tabla-publicaciones", { publicaciones }); // Renderiza la plantilla HBS con los datos de las publicaciones
@@ -185,7 +185,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
 // Ruta para mostrar todas las usuarios
 app.get('/usuarios', async (req, res) => {
   try {
-    const response = await fetch('http://localhost:3002/usuarios');
+    const response = await fetch('http://localhost:3002/api/v1/usuarios');
     const { users, countByRol } = await response.json();
     const countUsers = countByRol.find((count) => count.tipoRol === 'user').count;
     const countAdmins = countByRol.find((count) => count.tipoRol === 'admin').count;
@@ -200,7 +200,7 @@ app.get('/usuarios', async (req, res) => {
     try {
       const userId = req.params.id; 
       console.log(userId)
-      const response = await fetch(`http://localhost:3002/buscar-usuarios/${userId}`);
+      const response = await fetch(`http://localhost:3002/api/v1/usuarios/${userId}`);
       const {usuario, roles} = await response.json();
       
       res.render('formulario-edicion-usuario', { usuario, roles });
@@ -215,7 +215,7 @@ app.get('/usuarios', async (req, res) => {
       const userId = req.params.id;
       const { name, email, tipoRol } = req.body;
       
-      const response = await fetch(`http://localhost:3002/actualizar-usuario-buscado/${userId}`, {
+      const response = await fetch(`http://localhost:3002/api/v1/usuario/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -233,8 +233,7 @@ app.get('/usuarios', async (req, res) => {
   app.delete('/eliminar-usuario/:id', async (req, res) => {
     try {
       const userId = req.params.id;
-      
-      const response = await fetch(`http://localhost:3002/eliminar-usuario/${userId}`, {
+      const response = await fetch(`http://localhost:3002/api/v1/usuario/${userId}`, {
         method: 'DELETE',
       });
   
@@ -249,7 +248,7 @@ app.get('/usuarios', async (req, res) => {
     try {
       const userId = req.params.id;
       
-      const response = await fetch(`http://localhost:3002/eliminar-publicacion/${userId}`, {
+      const response = await fetch(`http://localhost:3002/api/v1/publicacion/${userId}`, {
         method: 'DELETE',
       });
    
