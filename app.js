@@ -18,18 +18,14 @@ app.set("views", "./views");
 
 //midlawares
 app.use("/js", express.static("/js"));
-app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
+app.use(express.static(path.join(__dirname, "./node_modules/bootstrap/dist")));
+app.use(express.static(path.join(__dirname, "./node_modules/sweetalert2/dist")));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverRide("_method", {methods: ["GET","POST"]}))
 app.use(fileUpload());
 const localStorage = new LocalStorage("./scratch");
-
-// Registra el helper de hbs
-hbs.registerHelper('eq', function(a, b, options) {
-  return a === b ? options.fn(this) : options.inverse(this);
-});
 
 // Ruta para mostrar la página principal
 app.get("/", (req, res) => {
@@ -43,7 +39,6 @@ app.get("/encuentra", async (req, res) => {
     );
     const data = await response.text();
     const publicaciones = JSON.parse(data);
-
     res.render("encuentra", { publicaciones });
   } catch (error) {
     console.error(error);
