@@ -4,39 +4,27 @@
 
 <body>
   {{>nav}}
-  <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner container">
-        <div class="carousel-item active">
-          <img src="img/regalo.jpg" class="d-block w-100" alt="a">
-        </div>
-        <div class="carousel-item">
-          <img src="img/corta.jpg" class="d-block w-100" alt="b">
-        </div>
-        <div class="carousel-item">
-          <img src="img/chayanne-cantante-spot-navidad-falabella-2.jpg" class="d-block w-100" alt="c">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="max-height: 750px;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/regalo.jpg" class="d-block w-100" alt="..." style="max-height: 750px; object-fit: cover;">
     </div>
-  </section>
+    <div class="carousel-item">
+      <img src="img/corta.jpg" class="d-block w-100" alt="..." style="max-height: 750px; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+      <img src="img/foto-index.jpg" class="d-block w-100" alt="..." style="max-height: 750px; object-fit: cover;">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   <main>
     <section>
       <article class="contenedor">
@@ -45,12 +33,13 @@
             <div class="imgBx">
               <img src="/img/img2.png" alt="Equipo de trabajo 1">
             </div>
-            <div class="contentBx">
+            <div class="contentBx h-100 py-3 my-5">
               <div class="content">
                 <h2>¿Quienes somos?</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam culpa sunt
-                  voluptates quam, sed quod earum et alias expedita distinctio ad nam fugiat
-                  veritatis a.</p>
+                <p>¡Hola! Somos una plataforma de intercambio gratuito donde puedes publicar objetos que ya no necesitas
+                  y ofrecerlos a personas que puedan estar interesadas en ellos. Nuestro objetivo es fomentar la
+                  reutilización y reducir el desperdicio, ofreciendo una alternativa sostenible para dar una segunda
+                  vida a objetos que todavía pueden ser útiles para alguien más.</p>
               </div>
             </div>
           </div>
@@ -58,12 +47,11 @@
             <div class="imgBx">
               <img src="/img/img1.avif" alt="Equipo de trabajo 2">
             </div>
-            <div class="contentBx">
+            <div class="contentBx ">
               <div class="content">
                 <h2>¿Cual es nuestro objetivo?</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam culpa sunt
-                  voluptates quam, sed quod earum et alias expedita distinctio ad nam fugiat
-                  veritatis a.</p>
+                <p>Reducir el impacto ambiental negativo de los residuos mediante la promoción de la reutilización y el
+                  reciclaje de objetos en desuso, fomentando una economía circular más sostenible y responsable.</p>
               </div>
             </div>
           </div>
@@ -74,14 +62,9 @@
   {{>footer}}
   <!-- hoja js propia -->
   <script src="/js/regala.js"></script>
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <!-- bootstrap -->
-  <script src="/js/bootstrap.bundle.min"></script>
-  <script>$(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script> 
 
 </body>
 
