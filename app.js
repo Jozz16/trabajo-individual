@@ -8,11 +8,7 @@ const LocalStorage = require("node-localstorage").LocalStorage;
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
 
-
-
 hbs.registerPartials(__dirname + "/views/partials");
-
-
 app.set("view engine", "hbs");
 app.set("views", "./views");
 
