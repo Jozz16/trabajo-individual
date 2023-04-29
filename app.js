@@ -166,7 +166,7 @@ app.get("/tablas-publicaciones", async (req, res) => {
     try {
       const response = await fetch("http://localhost:3002/api/v1/publicaciones/autor");
       const publicaciones = await response.json();
-      console.log(publicaciones);
+      
       res.render("tabla-publicaciones", { publicaciones }); // Renderiza la plantilla HBS con los datos de las publicaciones
     } catch (error) {
       console.error(error);
@@ -190,7 +190,6 @@ app.get('/usuarios', async (req, res) => {
   app.get('/editar-usuario/:id', async (req, res) => {
     try {
       const userId = req.params.id; 
-      console.log(userId)
       const response = await fetch(`http://localhost:3002/api/v1/usuarios/${userId}`);
       const {usuario, roles} = await response.json();
       

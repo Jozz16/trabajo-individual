@@ -16,6 +16,8 @@ Pasos para la instalación:
 
 3-  Esto iniciará el servidor en la dirección http://localhost:3003/ y permitirá la visualización de la página web
 
+4- para entrar a la vista administrador ingresar con el email Admin@Admin y clave C19775
+
 4- No olvides que para que la página funcione a la perfección, debes iniciar la API y el proyecto frontend.
 
 ## Item importantes 
