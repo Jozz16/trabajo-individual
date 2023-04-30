@@ -60,7 +60,7 @@ app.post("/publicaciones", async (req, res) => {
       return res.status(500).send(err);
   })
 
-if(localStorage.getItem('rol') == 'user'){
+
   try {
     const response = await fetch("http://localhost:3002/api/v1/publicacion", {
       method: "POST",
@@ -74,24 +74,24 @@ if(localStorage.getItem('rol') == 'user'){
         upload,
         descripcion,
       }
-      
       ),
     });
 
     if (response.ok) {
       console.log(`La publicación de ${nombreProducto} ha sido creada`);
       res.status(201).redirect('/encuentra')
+    } else if (response.status == 401) {
+      console.error("No estas autorizado");
+      res.redirect('/iniciar-sesion')
     } else {
       console.error("Error al crear la publicación");
-      res.status(500).send("Error al crear la publicación");
+      res.redirect('/iniciar-sesion')
     }
   } catch (error) {
     console.error(error.message);
     res.status(500).send(error.message);
   }
-} else {
-  res.render('inicio-sesion')
-}
+
   
 });
 // Ruta para mostrar la página de inicio de sesión
@@ -116,8 +116,6 @@ app.post("/iniciar-sesion", async (req, res) => {
     localStorage.setItem("token", token);
     localStorage.setItem("rol", rol);
     
-    
-
     if (localStorage.getItem("rol") === "user") {
       res.render("index");
     } else if (localStorage.getItem("rol") === "admin") {
